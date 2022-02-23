@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	
+	<title>Frontend Mentor | Base Apparel coming soon page</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Base Apparel coming soon page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<style>
+		.attribution { font-size: 11px; text-align: center; }
+		.attribution a { color: hsl(228, 45%, 44%); }
+	</style>
 </head>
 <body>
-
-  <main>
-    
+  <main class="landing">
+	<nav class="nav__mobile">
+        <figure class="logo__container">
+			<img src="./images/logo.svg" alt="logo" class="logo">
+        </figure>
+    </nav>
+	<section class="Hero__mobile">
+		<figure class="Hero__Image">
+			<img src="./images/hero-mobile.jpg" alt="" class="Image">
+		</figure>
+	</section>
+    <section class="main__container">
+		<nav class="nav__desktop">
+			<figure class="logo__container">
+				<img src="./images/logo.svg" alt="">
+			</figure>
+		</nav>
+		<section class="info__container">
+			<p class="title">We're <mark>Coming Soon</mark></p>
+			<p class="primary-text">
+			Hello fellow shoppers! We're currently building our new fashion store. 
+			Add your email below to stay up-to-date with announcements and our launch deals.
+			</p>
+		</section>
+		<form action="" class="form-container">
+			<input type="email" name="email" id="" placeholder="Email Address" class="form__input">
+			<button type="submit" class="form__button"><img src="./images/icon-arrow.svg" alt=""></button>
+		</form>
+    </section>
+    <section class="Hero__desktop">
+		<figure class="Hero__Image">
+			<img src="./images/hero-desktop.jpg" alt="" class="Image">
+		</figure>
+    </section>
   </main>
-  We're coming soon
-
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
-
-  Email Address
   
   <footer>
     <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+		Coded by <a href="#">Moralduke</a>.
     </p>
   </footer>
 </body>
