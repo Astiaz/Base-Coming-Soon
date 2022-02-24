@@ -34,10 +34,11 @@
 			Hello fellow shoppers! We're currently building our new fashion store. 
 			Add your email below to stay up-to-date with announcements and our launch deals.
 			</p>
-			<form action="" class="form-container">
-				<input type="email" name="email" placeholder="Email Address" class="form__input">
-				<button type="submit" class="form__button"><img src="./images/icon-arrow.svg" alt=""></button>
+			<form action="" name="email-form" class="form-container">
+				<input type="email" name="email" required placeholder="Email Address" class="form__input" id="form__input">
+				<button type="submit" id="form__button" class="form__button"><img src="./images/icon-arrow.svg" alt="arrow icon"></button>
 			</form>
+			<span id="error-info" class="error-info"></span>
 		</section>
     </section>
     <section class="Hero__desktop">
@@ -53,5 +54,50 @@
 		Coded by <a href="#">Moralduke</a>.
     </p>
   </footer>
+
+  <script>
+	const button = document.querySelector('#form__button');
+	const input = document.querySelector('#form__input');
+	
+	function validate(){
+		const RegEx = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+		let x = input.value;
+		if (x == "") {
+			if(document.querySelector('.error-icon')){
+				return false;
+			} else {
+				errorEvent();
+			}
+
+			return false;
+		}
+
+		if(!x.match(RegEx)){
+			if(document.querySelector('.error-icon')){
+				return false;
+			} else {
+				errorEvent('Please provide a valid email');
+			}
+
+			return false
+		}
+	}
+
+	function clear(){
+		input.style.border = "1px solid var(--SoftRed)";
+		document.querySelector('#error-info').innerHTML = '';
+		if(document.querySelector('.error-icon')) document.querySelector('.error-icon').remove();
+	}
+	
+	function errorEvent(error = ''){
+		input.style.border = "1px solid red";
+		button.insertAdjacentHTML('beforebegin', '<span class="error-icon"></span>');
+		document.querySelector('#error-info').innerHTML = `${error}`;
+	}
+	
+	button.addEventListener('click', validate);
+	input.addEventListener('focusout', validate);
+	input.addEventListener('focusin', clear);
+  </script>
 </body>
 </html>

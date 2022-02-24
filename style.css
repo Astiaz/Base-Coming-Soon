@@ -25,9 +25,12 @@ body{
     flex-direction: column;
 }
 
+.Hero__mobile .Image{
+    width: 100%;
+}
+
 .Hero__desktop{
     display: none;
-    
 }
 
 .nav__desktop{
@@ -111,12 +114,13 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 30px;
+    padding-right: 60px;
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    color: var(--DarkGrayishRed);
 
-    color: var(--DesaturatedRed);
-    
     border-radius: 25px;
     border: 1px solid var(--DesaturatedRed);
-
 }
 
 .form__input::placeholder{
@@ -134,34 +138,55 @@ body{
 
     border-radius: 25px;
     border: 1px solid var(--DesaturatedRed);
+    background: var(--SecondaryGradient);
     
     cursor: pointer;
-
-    background: var(--SecondaryGradient);
 
     box-shadow: 0px 5px 40px var(--DesaturatedRed);
 }
 
-footer{
-    height: 40px;
+.error-icon{
+    display: block;
+    
+    position: relative;
+    right: 55px;
+    top: 10px;
+    margin-left: -30px;
+    
+    width: 30px;
+    height: 30px;
+    
+    background: url('./images/icon-error.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.error-info{
+    margin-top: 15px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--SoftRed);
+}
+
+footer{
+    justify-self: flex-end;
+    height: 35px;
+}
+
+.attribution { font-size: 11px; text-align: center; color: var(--DarkGrayishRed);}
+.attribution a { color: var(--SoftRed); }
 
 /* Desktop Version */
 
 @media (min-width:1440px) {
     
     body{
+        overflow: hidden;
         min-height: 100vh;
     }
 
     .Hero__mobile{
-        display: none;
-    }
-
-    footer{
         display: none;
     }
     
@@ -220,19 +245,37 @@ footer{
     
     .form__input{
         border-radius: 30px;
+        padding-right: 70px;
         height: 60px;
+    }
+
+    .error-icon{
+        display:block;
+        
+        position: relative;
+        right: 60px;
+        top: 15px;
+        margin-left: -30px;
+        
+        width: 30px;
+        height: 30px;
+        
+        background: url('./images/icon-error.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .error-info{
+        margin-top: 15px;
+        padding-left: 30px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--SoftRed);
     }
     
     .form__button{
         border-radius: 30px;
         height: 60px;
-        width: 100px;
+        width: 120px;
     }
-
-
-
-
-
-
-
 }
